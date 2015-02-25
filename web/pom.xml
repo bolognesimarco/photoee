@@ -6,20 +6,29 @@
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>service</artifactId>
+	<artifactId>web</artifactId>
+	<packaging>war</packaging>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.bolo.photo.web</groupId>
-			<artifactId>entity</artifactId>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>com.bolo.photo.web</groupId>
+			<artifactId>service</artifactId>
+		</dependency>
 	</dependencies>
+
+	<build>
+		<finalName>photoee</finalName>
+	</build>
 </project>

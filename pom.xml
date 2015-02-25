@@ -8,12 +8,18 @@
   	<module>entity</module>
   	<module>service</module>
   	<module>persistence.unit</module>
+  	<module>web</module>
   </modules>
   <dependencyManagement>
   	<dependencies>
   		<dependency>
   			<groupId>com.bolo.photo.web</groupId>
   			<artifactId>entity</artifactId>
+  			<version>${project.version}</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>com.bolo.photo.web</groupId>
+  			<artifactId>service</artifactId>
   			<version>${project.version}</version>
   		</dependency>
   	</dependencies>
