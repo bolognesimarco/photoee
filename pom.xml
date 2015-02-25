@@ -7,7 +7,6 @@
   <modules>
   	<module>entity</module>
   	<module>service</module>
-  	<module>persistence.unit</module>
   	<module>web</module>
   </modules>
   <dependencyManagement>
