@@ -1,62 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>BOLOWEB</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 <style type="text/css">
-body{
-	margin: 0;
-	padding: 0;
+.light-gray{
+	background-color: #EDEDED;
 }
-.lightgrayheader{
-	background-color: #E0E0E0;
-	border-top: solid 2px black;
-	height: 5px;
-}
-.grayheader{
-	background-color: #C8C8C8;
-	height: 75px;
-	color: white;
-	padding: 25px 0 0 0;
-}
-.grayheadercontent{
-	margin: 0 auto;
-	width: 1080px;
-	text-align: center;
-}
-.grayheadercontent sup{
-	font-size: small;
-}
-header h1{
-	display: inline;
-}
-header img{
-	float: right;
-	margin: 0 0 0 15px;
-}
-.darkgrayheader{
-	margin: 0;
-	background-color: #A0A0A0;
-	border-bottom: solid 2px black;
-	height: 35px;
-}
-nav ul {
-	width: 1080px;
-	margin: 5px auto;
-	text-align: center;
-}
-
-nav ul li {
-	display: inline-block;
-	width: 130px;
-}
-
-nav ul li a {
-	color: black;
-	text-decoration: none;
+.small-stripe{
+	height: 10px;
 }
 </style>
 </head>
@@ -64,17 +22,6 @@ nav ul li a {
 	<script src="js/jquery-1.11.2.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			$("#bbb").click(function() {
-				$("section").load("nuovoUtente.html");
-			});
-			
-			
-			$("a").click(function(event) {// quando si clicka su un menu item
-				var clicked = $(this).attr("href");
-				alert(clicked);
-				$("section").load("nuovoUtente.html");
-				event.preventDefault();
-			});
 			
 			
 			
@@ -85,41 +32,12 @@ nav ul li a {
 		
 		
 	</script>
-	<header>
-		<div class="lightgrayheader"></div>
-		<div class="grayheader">
-			<div class="grayheadercontent">
-			<h1>PHOTOSHOOTERS<sup>TM</sup></h1>
-			<a href="login"><img alt="Login" src="imgs/ionicons-2.0.1/png/512/log-in.png" width="30px;" height="30px;"></a>
-			<a href="signup"><img alt="Signup" src="imgs/ionicons-2.0.1/png/512/person-add.png" width="30px;" height="30px;"></a>
-			</div>
-			<nav>
-			<ul>
-				<li><a href="home">home</a></li><!-- per togliere lo spazio bianco
-				 --><li><a href="utenti">photoshooters</a></li><!--  per togliere lo spazio bianco
-				 --><li><a href="lavoro">casting|lavoro</a></li><!--  per togliere lo spazio bianco
-				 --><li><a href="forum">forum</a></li><!--  per togliere lo spazio bianco
-				 --><li><a href="site">site</a></li>				 
-			</ul>
-			</nav>
-		</div>
-		<div class="darkgrayheader">
-		<nav>
-			<ul>
-				<li><a href="album">album</a></li><!-- per togliere lo spazio bianco
-				 --><li><a href="messaggi">messaggi</a></li><!--  per togliere lo spazio bianco
-				 --><li><a href="profilo">profilo</a></li><!--  per togliere lo spazio bianco
-				 --><li><a href="chat">chat</a></li>				 
-			</ul>
-			</nav>
-		</div>
-	</header>
 	
-	<section>
-	</section>
-	<footer>
-		<h5>PhotoShooters.net di Fabio Bolognesi S.p.a. - Roma 00100 -  <a href="condizioni">Condizioni
-			di utilizzo</a></h5>
-	</footer>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 light-gray small-stripe"></div>
+		</div>
+	</div>
+	
 </body>
 </html>

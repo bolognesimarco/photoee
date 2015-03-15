@@ -14,6 +14,7 @@ public class EMF implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent event) {
+    	System.out.println("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
         try {
 			emf = Persistence.createEntityManagerFactory("PHOTO_PU");
 		} catch (Exception e) {
@@ -27,6 +28,7 @@ public class EMF implements ServletContextListener {
     }
 
     public static EntityManager createEntityManager() {
+    	System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
         if (emf == null) {
             throw new IllegalStateException("Context is not initialized yet.");
         }
