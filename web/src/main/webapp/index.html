@@ -11,10 +11,42 @@
   <![endif]-->
 <style type="text/css">
 .light-gray{
-	background-color: #EDEDED;
+	background-color: rgb(215,215,215);
+}
+.medium-gray{
+	background-color: rgb(190,190,190);
+}
+.dark-gray{
+	background-color: rgb(152,164,158);
 }
 .small-stripe{
 	height: 10px;
+}
+.public-stripe{
+	height: 100px;
+}
+.private-stripe{
+	height: 35px;
+}
+.site-header{
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}
+.nopadding > [class*='col-'] {
+    padding-top:0;
+    padding-bottom:0;
+    border: solid 1px black;
+}
+.site-header sup{
+	font-size: 10px;
+}
+.rotated{
+	-moz-transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
+	-o-transform: scale(1, -1);
+	-ms-transform: scale(1, -1);
+	transform: scale(1, -1);
 }
 </style>
 </head>
@@ -36,6 +68,28 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-12 light-gray small-stripe"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 medium-gray public-stripe">
+				<div class="row nopadding">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4 site-header">PHOTOSHOOTERS<sup>TM</sup></div>
+					<div class="col-sm-4"></div>
+				</div>
+				<div class="row nopadding">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4 site-header rotated">PHOTOSHOOTERS<sup>TM</sup></div>
+					<div class="col-sm-4"></div>
+				</div>
+				<div class="row nopadding">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4 site-header">a</div>
+					<div class="col-sm-4"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="border-bottom: solid 2px black;">
+			<div class="col-sm-12 dark-gray private-stripe"></div>
 		</div>
 	</div>
 	
