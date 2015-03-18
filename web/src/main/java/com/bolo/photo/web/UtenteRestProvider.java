@@ -26,7 +26,7 @@ public class UtenteRestProvider  {
 	final static Logger logger = LoggerFactory.getLogger(UtenteRestProvider.class);
 
 
-	private UtenteService service;
+	private UtenteService service = new UtenteService();
 	
 	private SimpleDateFormat yyyy_MM_dd = new SimpleDateFormat("yyyy-MM-dd");
 
