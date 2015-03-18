@@ -13,6 +13,7 @@
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 <style type="text/css">
+
 .light-gray {
 	background-color: rgb(215, 215, 215);
 }
@@ -26,7 +27,7 @@
 }
 
 .small-stripe {
-	height: 10px;
+	height: 10px;/*giusto perchè è vuoto*/
 }
 
 .public-stripe {
@@ -38,11 +39,9 @@
 }
 
 .sitename{
-	height: 64px;
+
 }
-.public-menu-row{
-	height: 33px;
-}
+
 .rotated {
 	-moz-transform: scale(1, -1);
 	-webkit-transform: scale(1, -1);
@@ -52,41 +51,41 @@
 }
 
 /* navbar */
-#custom-bootstrap-menu.navbar-collapse .navbar-brand {
+#custom-bootstrap-menu.navbar-default .navbar-brand {
     color: rgba(119, 119, 119, 1);
 }
-#custom-bootstrap-menu.navbar-collapse {
+#custom-bootstrap-menu.navbar-default {
     font-size: 17px;
     background-color: rgba(190, 190, 190, 1);
     border-bottom-width: 1px;
 }
-#custom-bootstrap-menu.navbar-collapse .navbar-nav>li>a {
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
     color: rgba(119, 119, 119, 1);
     background-color: rgba(190, 190, 190, 1);
 }
-#custom-bootstrap-menu.navbar-collapse .navbar-nav>li>a:hover,
-#custom-bootstrap-menu.navbar-collapse .navbar-nav>li>a:focus {
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
     color: rgba(240, 240, 240, 1);
     background-color: rgba(190, 190, 190, 1);
 }
-#custom-bootstrap-menu.navbar-collapse .navbar-nav>.active>a,
-#custom-bootstrap-menu.navbar-collapse .navbar-nav>.active>a:hover,
-#custom-bootstrap-menu.navbar-collapse .navbar-nav>.active>a:focus {
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
     color: rgba(240, 240, 240, 1);
     background-color: rgba(190, 190, 190, 1);
 }
-#custom-bootstrap-menu.navbar-collapse .navbar-toggle {
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
     border-color: #bebebe;
 }
-#custom-bootstrap-menu.navbar-collapse .navbar-toggle:hover,
-#custom-bootstrap-menu.navbar-collapse .navbar-toggle:focus {
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
     background-color: #bebebe;
 }
-#custom-bootstrap-menu.navbar-collapse .navbar-toggle .icon-bar {
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
     background-color: rgba(240, 240, 240, 1);
 }
-#custom-bootstrap-menu.navbar-collapse .navbar-toggle:hover .icon-bar,
-#custom-bootstrap-menu.navbar-collapse .navbar-toggle:focus .icon-bar {
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
     background-color: rgba(240, 240, 240, 1);
 }
 </style>
@@ -107,13 +106,13 @@
 			<div class="col-sm-12 medium-gray public-stripe">
 				<div class="row sitename">
 					<div class="col-sm-4"></div>
-					<div class="col-sm-4"></div>
+					<div class="col-sm-4"><img alt="PHOTOSHOOTERS" src="imgs/logo-01.svg"></div>
 					<div class="col-sm-4"></div>
 				</div>
 				<div class="row public-menu-row">
 					<div class="col-sm-3"></div>
-					<div class="col-sm-6">
-						<div id="custom-bootstrap-menu" class="navbar navbar-collapse "
+					<div class="col-sm-8">
+						<div id="custom-bootstrap-menu" class="navbar navbar-default" style="margin-bottom: 0; border: 0;"
 							role="navigation">
 							<div class="container-fluid">
 								<div class="navbar-header">
@@ -124,26 +123,27 @@
 											class="icon-bar"></span>
 									</button>
 								</div>
-								<div class="collapse navbar-collapse">
+								<div class="collapse navbar-collapse navbar-menubuilder">
 									<ul class="nav navbar-nav navbar-left">
 										<li><a href="#">HOMe</a></li>
 										<li><a href="#">PHOTOSHOOTERs</a></li>
 										<li><a href="#">CASTINg | LAVORo</a></li>
 										<li><a href="#">FORUm</a></li>
 										<li><a href="#">SITe</a></li>
-										<li><a href="#">REGISTRATi</a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-3"></div>
+					<div class="col-sm-1"></div>
 				</div>
 			</div>
 		</div>
-		<!-- <div class="row" style="border-bottom: solid 2px black;">
+		<div class="row" style="border-bottom: solid 2px black;">
 			<div class="col-sm-12 dark-gray private-stripe"></div>
-		</div> -->
+		</div>
 	</div>
 
 </body>
