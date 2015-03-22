@@ -8,6 +8,7 @@
 	<modules>
 		<module>web</module>
 		<module>persistence</module>
+		<module>photoshooters</module>
 	</modules>
 
 	<dependencies>

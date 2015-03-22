@@ -27,6 +27,9 @@ public class Utente {
 	private String name;
 	
 	@Column
+	private String email;
+
+	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataIscrizione;
 	
@@ -212,6 +215,12 @@ public class Utente {
 		this.sesso = sesso;
 	}
 	
-	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	
 }

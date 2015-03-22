@@ -11,6 +11,7 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +21,7 @@ import com.bolo.photo.web.entity.TipoUtente;
 import com.bolo.photo.web.entity.Utente;
 import com.bolo.photo.web.service.UtenteService;
 import com.bolo.photo.web.vo.TipoUtenteVO;
+import com.bolo.photo.web.vo.UtenteVO;
 
 @Path("/utente")
 public class UtenteRestProvider  {
@@ -29,6 +31,18 @@ public class UtenteRestProvider  {
 	private UtenteService service = new UtenteService();
 	
 	private SimpleDateFormat yyyy_MM_dd = new SimpleDateFormat("yyyy-MM-dd");
+	
+	@POST @Path("/login") @Produces("application/json")
+	public UtenteVO login(
+			@FormParam("username") String username,
+			@FormParam("password") String password
+			){
+		
+		UtenteVO u = new UtenteVO();
+		u.setName(username);
+		u.setPassword(password);
+		return u;
+	}
 
     @POST
 	public void nuovoUtente(

@@ -1,3 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+<%
+	String token_value = null;
+	if(session.isNew()){
+		token_value = "___________________";
+		session.setAttribute("cfrs", token_value);
+	}else{
+		token_value = (String)session.getAttribute("cfrs");
+	}
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,54 +24,34 @@
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-<style type="text/css">
-div {
-	/* border: solid 1px black; */
-	
-}
-
-.col-centered {
-	float: none;
-	margin: 0 auto;
-}
-
-.bgimage {
-	background-image: url('imgs/IMG_2055blu.jpg');
-	background-size: 100%;
-}
-
-.bgimage-inside {
-	padding-top: 37.36%; /* this is actually (426/1140)*100 */
-}
-
-#publicmenu.navbar-default {
-	background-color: #9FB2C2;
-	border-color: #9FB2C2;
-}
-
-#publicmenu.navbar-default .navbar-nav>li>a {
-	color: #454545;
-	font-weight: bold;
-}
-</style>
 </head>
 <body>
-	<script>
+<script>
 		$(document).ready(function() {
-			$('#registrati').click(function(){
-				  
-			  	$('.modal-body').load('nuovoUtente.html',function(result){
-				    $('#myModal').modal({show:true});
-				});
-			  	
-			  	$('#btnLogin').click(function(){
-			  		$.post('utente/login', $('#formLogin').serialize());
-			  	});
-			  
+			var csrf_token = '<%= token_value %>';
+			
+			$("body").bind("ajaxSend", function(elm, xhr, s){
+			   if (s.type == "POST") {
+			      xhr.setRequestHeader('X-CSRF-Token', csrf_token);
+			   }
+			});
+			
+			$("#btnLogin").click(function(){
 				
+				 $.ajax({
+					method: "POST",
+					url: "rest/utente/login",
+					data: $('#formLogin').serialize(),
+					success: function(data, textStatus, jqXHR){
+						alert(data.password);
+					},
+					error: function(jqXHR, textStatus, errorThrown){
+						alert(jqXHR+"-"+textStatus+"-"+errorThrown);
+					}
+				});
 			});
 		});
-	</script>
+</script>
 
 	<div class="container-fluid">
 		<div class="row" style="height: 10px; background-color: #C2CDD6;"></div>
@@ -158,20 +150,6 @@ div {
 		</nav>
 
 
-	</div>
-
-
-	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">×</button>
-			<h3>Modal header</h3>
-		</div>
-		<div class="modal-body">
-			<p>My modal content here…</p>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal">Close</button>
-		</div>
 	</div>
 
 
