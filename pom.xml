@@ -9,6 +9,7 @@
 		<module>web</module>
 		<module>persistence</module>
 		<module>photoshooters</module>
+		<module>temp</module>
 	</modules>
 
 	<dependencies>
