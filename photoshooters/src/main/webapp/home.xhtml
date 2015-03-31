@@ -37,10 +37,11 @@
 			
 			$(".clickable").click(function() {
 				
-				alert(this.id);
+				//alert(this.id);
 				
 				$("#_content_").load(this.id+".xhtml", function(response, status, xhr) {
 					if (status == "error") {
+						alert(msg + xhr.status + " " + xhr.statusText);
 						var msg = "Sorry but there was an error: ";
 						$("#error").html(msg + xhr.status + " " + xhr.statusText);
 					}
@@ -62,31 +63,37 @@
 		<div class="riga-celeste-chiaro"></div>
 		<div class="riga-celeste-medio">
 			<img src="rimgs/Scritta_photoshooters-01_C.svg" alt="PHOTOSHOOTERS"></img>
+			<ul>
+				<li><a href="#about" class="clickable gishafont">HOMe</a></li>
+				<li><a href="#about" class="clickable gishafont">PHOTOSHOOTERs</a></li>
+				<li><a href="#about" class="clickable gishafont">LAVORo|EVENTi</a></li>
+				<li><a href="#about" class="clickable gishafont">FORUm</a></li>
+				<li><a href="#about" class="clickable gishafont">SITe</a></li>
+				<li><a href="#about" id="registrati" class="clickable gishafont">REGISTRATi</a></li>
+				<li><a href="#about" class="clickable gishafont">LOGIn</a></li>
+			</ul>
 		</div>
 		<div class="pattern-alto-guest"></div>
 	</header>
 	
 	
 	
-	<section>
+	<section id="_content_" style="overflow-y: scroll;padding-top: 20px;">
+	
 			
 	</section>
 	
 	<footer>
-		<div style="position: absolute; bottom: 0; left: 0; right: 0;">
-			<div class="celeste-chiaro" style="height: 7px;"></div>
-			<div class="celeste-medio" style="height: 13px;"></div>
-			<div style="background-color: #9FB2C2; padding: 0; background-image: url('rimgs/pattern_basso_C.svg'); background-size: cover ;background-repeat: no-repeat;">
-				<div class="text-center" style="padding: 0;">
-					<img src="rimgs/logo_facebook_C.svg" class="img-responsive" style="display: inline-block; margin: 7px 0 7px 0; "></img>
-					<img src="rimgs/logo_twitter_C.svg" class="img-responsive" style="display: inline-block; margin: 7px 0 7px 0; "></img>
-					<img src="rimgs/logo_google_C.svg" class="img-responsive" style="display: inline-block; margin: 7px 0 7px 0;"></img>
-					<img src="rimgs/logo_tumbl_C.svg" class="img-responsive" style="display: inline-block; margin: 7px 0 7px 0;"></img>
-					<img src="rimgs/logo_linkedin_C.svg" class="img-responsive" style="display: inline-block; margin: 7px 0 7px 0;"></img>
-					<span style="display: inline-block; margin-top: 28px;" class="gishafont">2015-2099 photoshooters.net | All Rights Reserved</span>
-				</div>
-			</div>
+		<div class="riga-celeste-chiaro"></div>
+		<div class="riga-celeste-medio-basso">
+		<img src="rimgs/logo_facebook_C.svg"></img>
+				<img src="rimgs/logo_twitter_C.svg"></img>
+				<img src="rimgs/logo_google_C.svg"></img>
+				<img src="rimgs/logo_tumbl_C.svg"></img>
+				<img src="rimgs/logo_linkedin_C.svg"></img>
+				<span class="gishafont">2015-2099 photoshooters.net | All Rights Reserved</span>
 		</div>
+		<div class="pattern-basso-guest"></div>
 	</footer>
 	
 

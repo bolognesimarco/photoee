@@ -13,6 +13,7 @@ html, body{
 .riga-celeste-medio{
 	text-align: center;
 	background-color: #9FB2C2;
+	height: 82px;
 }
 
 .pattern-alto-guest{
@@ -26,4 +27,45 @@ section {
 	height: 100%; 
 	background-image: url('../rimgs/sfondo2.jpg'); 
 	background-size: cover; 
+}
+
+footer{
+	position: absolute; 
+	bottom: 0; 
+	left: 0; 
+	right: 0;
+}
+
+.pattern-basso-guest{
+	background-image: url('../rimgs/pattern_alto_3000_C.svg');
+	background-size: 3000px 24px;
+	text-align: center;
+	height: 24px;
+}
+
+.riga-celeste-medio-basso{
+	text-align: center;
+	background-color: #9FB2C2;
+	vertical-align: middle;
+}
+
+.gishafont {
+    font-family: gisha;
+	vertical-align: middle;
+	margin-left: 30px;
+}
+
+header div ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header div ul li{
+	display: inline;
+}
+
+header div ul li a{
+	text-decoration: none;
+	color: black;
 }
