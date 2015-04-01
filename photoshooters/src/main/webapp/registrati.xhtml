@@ -15,13 +15,31 @@
 
 <style type="text/css">
 
-
+.titolo-pannello{
+	color: #EF4323;
+	display: block;
+	text-align: left;
+	font-size: large;
+}
 
 
 
 </style>
 </head>
 <body>
-	<div style="background-color: rgba(255,255,255,0.3); width: 1000px; height: 1000px; margin: 0 auto;">ciao</div>
+	<div style="width: 600px; background-color: rgba(194,205,214,0.8); height: 500px; margin: 0 auto; text-align: center; padding-top: 10px;">
+		<span class="titolo-pannello gishafont">REGISTRAZIONe PHOTOSHOOTEr</span>
+	    <h:form id="registratiform">
+	    
+	        <h:outputLabel for="username">Username</h:outputLabel>
+	        <h:inputText id="username" value="#{registratiBean.username}" /><br/>
+	        
+	        <h:outputLabel for="password">Password</h:outputLabel>
+	        <h:inputText id="password" value="#{registratiBean.password}" />
+	        
+	        <h:commandButton value="Submit" action="#{registratiBean.registrati}" onclick="return check();"/>
+	    </h:form>
+		
+	</div>
 </body>
 </html>
