@@ -20,24 +20,69 @@
 	display: block;
 	text-align: left;
 	font-size: large;
+	font-weight: bold;
 }
 
-
+.command-link{
+	color: white;
+	display: block;
+	text-align: right;
+	font-size: large;
+	font-weight: bold;
+	text-decoration: none;
+}
 
 </style>
 </head>
 <body>
-	<div style="width: 600px; background-color: rgba(194,205,214,0.8); height: 500px; margin: 0 auto; text-align: center; padding-top: 10px;">
+	<div style="width: 600px; background-color: rgba(194,205,214,0.8); padding-top: 10px; margin: 0 auto;">
 		<span class="titolo-pannello gishafont">REGISTRAZIONe PHOTOSHOOTEr</span>
 	    <h:form id="registratiform">
-	    
-	        <h:outputLabel for="username">Username</h:outputLabel>
-	        <h:inputText id="username" value="#{registratiBean.username}" /><br/>
-	        
-	        <h:outputLabel for="password">Password</h:outputLabel>
-	        <h:inputText id="password" value="#{registratiBean.password}" />
-	        
-	        <h:commandButton value="Submit" action="#{registratiBean.registrati}" onclick="return check();"/>
+	    	<table style="width: 100%;">
+	    	<tr>
+	    		<td style="width: 50%; text-align: right;">
+	        	<h:outputLabel for="username">Username</h:outputLabel>
+	        	</td>
+	        	<td style="text-align: left;">
+	        	<h:inputText id="username" value="#{registratiBean.username}" />
+	        	</td>
+	        </tr>
+	        <tr>
+	        	<td style="width: 50%; text-align: right;">
+	        	<h:outputLabel for="password">Password</h:outputLabel>
+	       		</td>
+	       		<td style="text-align: left;">
+	        	<h:inputText id="password" value="#{registratiBean.password}" />
+	        	</td>
+	        </tr>
+	        <tr>
+	        	<td style="width: 50%; text-align: right;">
+	        	<h:outputLabel for="confirm">Conferma password</h:outputLabel>
+	       		</td>
+	       		<td style="text-align: left;">
+	        	<h:inputText id="confirm" value="#{registratiBean.confirm}" />
+	        	</td>
+	        </tr>
+	        <tr>
+	        	<td style="width: 50%; text-align: right;">
+	        	<h:outputLabel for="email">Email</h:outputLabel>
+	       		</td>
+	       		<td style="text-align: left;">
+	        	<h:inputText id="email" value="#{registratiBean.email}" />
+	        	</td>
+	        </tr>
+	        <tr>
+	        	<td style="width: 50%; text-align: right;">
+	        	<h:outputLabel for="nome">Nome</h:outputLabel>
+	       		</td>
+	       		<td style="text-align: left;">
+	        	<h:inputText id="nome" value="#{registratiBean.nome}" />
+	        	</td>
+	        </tr>
+	        </table>
+	        <div style="text-align: right; padding-right: 30px; padding-bottom: 10px;">
+	        <h:commandLink class="command-link" value="COMPLETa REGISTRAZIONe" action="#{registratiBean.registrati}"/>
+	        </div>
 	    </h:form>
 		
 	</div>
