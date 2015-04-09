@@ -69,3 +69,16 @@ header div ul li a{
 	text-decoration: none;
 	color: black;
 }
+
+.menubutton{
+	font-family: gisha; 
+	background:none!important;
+    border:none; 
+    padding:0!important;
+    cursor: pointer;
+     
+	text-decoration: none;
+	color: black;
+	vertical-align: middle;
+	margin-left: 30px;
+}
