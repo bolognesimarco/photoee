@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:jsf="http://xmlns.jcp.org/jsf/core">
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
 	<h:outputStylesheet library="css" name="home.css"  />
@@ -34,7 +36,7 @@
 	</script>
 
 
-	<header>
+	<h:panelGroup layout="block" id="hheader">
 		<div class="riga-celeste-chiaro"></div>
 		<div class="riga-celeste-medio">
 			<img src="rimgs/Scritta_photoshooters-01_C.svg" alt="PHOTOSHOOTERS"></img>
@@ -43,37 +45,37 @@
 
 				<h:inputHidden value="#{menuBean.home}" id="homeid" />
 				<h:commandButton value="HOMe" styleClass="menubutton">
-					<jsf:ajax execute="homeid" render=":_content_" />
+					<f:ajax execute="homeid" render=":_content_" />
 				</h:commandButton>
 
 				<h:inputHidden value="#{menuBean.photoshooters}" id="photoshootersid" />
 	    	   	<h:commandButton value="PHOTOSHOOTERs">
-	    			<jsf:ajax execute="photoshootersid" render=":_content_" />
+	    			<f:ajax execute="photoshootersid" render=":_content_" />
 	    	   	</h:commandButton>
 	    	   	
 	    	   	<h:inputHidden value="#{menuBean.lavoro}" id="lavoroid" />
 	    	   	<h:commandButton value="LAVORo|EVENTi">
-	    			<jsf:ajax execute="lavoroid" render=":_content_" />
+	    			<f:ajax execute="lavoroid" render=":_content_" />
 	    	   	</h:commandButton>
 	    	   	
 	    	   	<h:inputHidden value="#{menuBean.forum}" id="forumid" />
 	    	   	<h:commandButton value="FORUm">
-	    			<jsf:ajax execute="forumid" render=":_content_" />
+	    			<f:ajax execute="forumid" render=":_content_" />
 	    	   	</h:commandButton>
 	    	   	
 	    	   	<h:inputHidden value="#{menuBean.site}" id="siteid" />
 	    	   	<h:commandButton value="SITe">
-	    			<jsf:ajax execute="siteid" render=":_content_" />
+	    			<f:ajax execute="siteid" render=":_content_" />
 	    	   	</h:commandButton>
 	    	   	
 	    	   	<h:inputHidden value="#{menuBean.registrati}" id="registratiid" />
 	    	   	<h:commandButton value="REGISTRATi">
-	    			<jsf:ajax execute="registratiid" render=":content :registratiform" />
+	    			<f:ajax execute="registratiid" render=":content :registratiform" />
 	    	   	</h:commandButton>
 	    	   	
 	    	   	<h:inputHidden value="#{menuBean.login}" id="loginid" />
 	    	   	<h:commandButton value="LOGIn">
-	    			<jsf:ajax execute="loginid" render=":_content_" />
+	    			<f:ajax execute="loginid" render=":_content_" />
 	    	   	</h:commandButton>
 
 			</h:form>
@@ -89,19 +91,19 @@
 
 		</div>
 		<div class="pattern-alto-guest"></div>
-	</header>
+	</h:panelGroup>
 
 
 
-	<section id="_content_"	style="overflow-y: scroll; padding-top: 20px; text-align: center;">
+	<h:panelGroup layout="block" id="_content_">
 		<h:panelGroup  id="content" layout="block">
 			<ui:include src="#{contentBean.content}" />
 		</h:panelGroup>
 		<!-- 		<div id="_content_" style="display:inline-block; text-align: right; width: 70%; border: solid 1px red;"></div>
 		<div style="display:inline-block; width: 25%; border: solid 1px red;"></div> -->
-	</section>
+	</h:panelGroup>
 
-	<footer>
+	<h:panelGroup layout="block" id="ffooter">
 		<div class="riga-celeste-chiaro"></div>
 		<div class="riga-celeste-medio-basso">
 			<img src="rimgs/logo_facebook_C.svg"></img> <img
@@ -112,7 +114,7 @@
 				photoshooters.net | All Rights Reserved</span>
 		</div>
 		<div class="pattern-basso-guest"></div>
-	</footer>
+	</h:panelGroup>
 
 
 </h:body>

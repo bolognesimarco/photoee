@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:jsf="http://xmlns.jcp.org/jsf/core"	
-    xmlns:o="http://omnifaces.org/ui"
-	xmlns:of="http://omnifaces.org/functions">
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
 <h:head>
 
 <style type="text/css">
@@ -28,6 +29,9 @@
 .right{
 	text-align: right;
 }
+.left{
+	text-align: left;
+}
 </style>
 </h:head>
 <body>
@@ -41,7 +45,7 @@
 
 				<h:outputLabel for="username">Username</h:outputLabel>
 				<h:inputText id="username" value="#{registratiBean.username}"
-					required="true" size="8" requiredMessage="Inserisci uno username" />
+					required="true" requiredMessage="Inserisci uno username" />
 				<h:panelGroup>
 					<h:message for="username" />
 				</h:panelGroup>
@@ -49,7 +53,7 @@
 
 				<h:outputLabel for="password">Password</h:outputLabel>
 				<h:inputSecret id="password" value="#{registratiBean.password}"
-					required="true" size="10" requiredMessage="Inserisci una password">
+					required="true" requiredMessage="Inserisci una password">
 				</h:inputSecret>
 				<h:panelGroup>
 					<h:message for="password" />
@@ -58,20 +62,20 @@
 
 				<h:outputLabel for="confirm">Conferma password</h:outputLabel>
 				<h:inputSecret id="confirm" value="#{registratiBean.confirm}"
-					required="true" size="10" requiredMessage="Conferma la password">
+					required="true" requiredMessage="Conferma la password">
 				</h:inputSecret>
 				<h:panelGroup>
-					<h:message for="confirm" />
+					<h:message for="confirm" /><!-- 
 					<o:validateEqual components="password confirm"
-						message="Passwords do not match!" showMessageFor="confirm" />
+						message="Passwords do not match!" showMessageFor="confirm" /> -->
 				</h:panelGroup>
 
 
 				<h:outputLabel for="email">Email</h:outputLabel>
 				<h:inputText id="email" value="#{registratiBean.email}"
 					required="true" requiredMessage="Inserisci un indirizzo email"
-					validatorMessage="Formato indirizzo non valido">
-					<jsf:validateRegex
+					validatorMessage="Formato indirizzo non valido" 	>
+					<f:validateRegex
 						pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
 				</h:inputText>
 				<h:panelGroup>
@@ -87,10 +91,10 @@
 				</h:panelGroup>
 			</h:panelGrid>
 
-			<div
-				style="text-align: right; padding-right: 30px; padding-bottom: 10px;">
-				<h:commandLink class="command-link" value="COMPLETa REGISTRAZIONe"
-					action="#{registratiBean.registrati()}" />
+			<div style="text-align: right; padding-right: 30px; padding-bottom: 10px;">
+				<h:commandButton  class="command-link" value="COMPLETa REGISTRAZIONe"
+				 	action="#{registratiBean.registrati()}" >
+            	</h:commandButton>  
 			</div>
 		</h:form>
 

@@ -3,11 +3,13 @@ package com.bolo.photoshooters.web;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 
 @ManagedBean
+@SessionScoped
 public class RegistratiBean {
 	private String username;
 	private String password;
@@ -18,6 +20,7 @@ public class RegistratiBean {
 	
 	public void registrati(){
 		System.out.println(username+"-"+password);
+		System.out.println("COMPLETA REGISTRAZIONE");
 		contentBean.setContent("registrati.xhtml");
 		FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("content");
 	}
