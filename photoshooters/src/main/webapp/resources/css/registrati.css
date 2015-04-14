@@ -1,0 +1,23 @@
+.titolo-pannello {
+	color: #EF4323;
+	display: block;
+	text-align: left;
+	font-size: large;
+	font-weight: bold;
+}
+
+.command-link {
+	color: white;
+	display: block;
+	text-align: right;
+	font-size: large;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.right{
+	text-align: right;
+}
+.left{
+	text-align: left;
+}

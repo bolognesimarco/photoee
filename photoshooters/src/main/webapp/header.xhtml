@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<h:outputStylesheet library="css" name="common.css"  />
+	<h:outputStylesheet library="css" name="header.css"  />
+</h:head>
+
+<h:body>
+	<ui:composition>
+		<div class="riga-celeste-chiaro"></div>
+		<div class="riga-celeste-medio">
+			<img src="/rimgs/Scritta_photoshooters-01_C.svg" alt="PHOTOSHOOTERS"></img>
+
+			<h:form>
+
+				<h:inputHidden value="#{menuBean.home}" id="homeid" />
+				<h:commandButton value="HOMe" styleClass="menubutton">
+					<f:ajax execute="homeid" render=":content" />
+				</h:commandButton>
+
+				<h:inputHidden value="#{menuBean.photoshooters}" id="photoshootersid" />
+	    	   	<h:commandButton value="PHOTOSHOOTERs" styleClass="menubutton">
+	    			<f:ajax execute="photoshootersid" render=":content" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:inputHidden value="#{menuBean.lavoro}" id="lavoroid" />
+	    	   	<h:commandButton value="LAVORo|EVENTi" styleClass="menubutton">
+	    			<f:ajax execute="lavoroid" render=":content" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:inputHidden value="#{menuBean.forum}" id="forumid" />
+	    	   	<h:commandButton value="FORUm" styleClass="menubutton">
+	    			<f:ajax execute="forumid" render=":content" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:inputHidden value="#{menuBean.site}" id="siteid" />
+	    	   	<h:commandButton value="SITe" styleClass="menubutton">
+	    			<f:ajax execute="siteid" render=":content" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:inputHidden value="#{menuBean.registrati}" id="registratiid" />
+	    	   	<h:commandButton value="REGISTRATi" styleClass="menubutton">
+	    			<f:ajax execute="registratiid" render=":content :registratiform" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:inputHidden value="#{menuBean.login}" id="loginid" />
+	    	   	<h:commandButton value="LOGIn" styleClass="menubutton">
+	    			<f:ajax execute="loginid" render=":content" />
+	    	   	</h:commandButton>
+
+			</h:form>
+		</div>
+		<div class="pattern-alto-guest"></div>
+	</ui:composition>
+
+
+</h:body>
+</html>
