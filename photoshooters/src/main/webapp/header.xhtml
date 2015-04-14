@@ -6,18 +6,16 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<h:head>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<h:outputStylesheet library="css" name="common.css"  />
-	<h:outputStylesheet library="css" name="header.css"  />
-</h:head>
 
 <h:body>
 	<ui:composition>
+		<h:outputStylesheet library="css" name="common.css"  />
+		<h:outputStylesheet library="css" name="header.css"  />
 		<div class="riga-celeste-chiaro"></div>
 		<div class="riga-celeste-medio">
-			<img src="/rimgs/Scritta_photoshooters-01_C.svg" alt="PHOTOSHOOTERS"></img>
-
+			<!-- <img src="/rimgs/Scritta_photoshooters-01_C.svg" alt="PHOTOSHOOTERS"></img> -->
+			<h:graphicImage value="/resources/images/Scritta_photoshooters-01_C.svg"/>
+			
 			<h:form>
 
 				<h:inputHidden value="#{menuBean.home}" id="homeid" />
