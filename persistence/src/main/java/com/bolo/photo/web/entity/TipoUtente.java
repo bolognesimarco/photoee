@@ -1,15 +1,16 @@
 package com.bolo.photo.web.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class TipoUtente {
-	
+public class TipoUtente implements Serializable{
+	private static final long serialVersionUID = -9019773926782820630L;
+
 	@Id
-	@GeneratedValue
 	private int id;
 	
 	@Column

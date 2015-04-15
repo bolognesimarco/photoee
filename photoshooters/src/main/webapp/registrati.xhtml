@@ -10,34 +10,39 @@
 	<h:outputStylesheet name="common.css" library="css" />
 	<h:outputStylesheet name="registrati.css" library="css" />
 </h:head>
-<body>
+<h:body>
 
-	<div
-		style="width: 600px; background-color: rgba(204, 204, 204, 0.54); padding-top: 10px; margin: 0 auto;">
-		<span class="titolo-pannello gishafont">REGISTRAZIONe PHOTOSHOOTEr</span>
+	<h:panelGroup styleClass="pannello registrati">
+
 		<h:form id="registratiform">
 			<h:panelGrid columns="3" columnClasses="right, left, left">
+			
+				<f:facet name="header">
+            		<h:outputText value="REGISTRAZIONe PHOTOSHOOTEr"/>
+        		</f:facet>
 
-				<h:outputLabel for="username">Username</h:outputLabel>
+				<h:outputLabel for="username">username</h:outputLabel>
 				<h:inputText id="username" value="#{registratiBean.username}"
-					required="true" requiredMessage="Inserisci uno username" />
+					required="true" requiredMessage="inserisci uno username" 
+					validator="#{registratiBean.checkUsername}"/>
 				<h:panelGroup>
 					<h:message for="username" />
 				</h:panelGroup>
 
 
-				<h:outputLabel for="password">Password</h:outputLabel>
+				<h:outputLabel for="password">password</h:outputLabel>
 				<h:inputSecret id="password" value="#{registratiBean.password}"
-					required="true" requiredMessage="Inserisci una password">
+					required="true" requiredMessage="inserisci una password">
 				</h:inputSecret>
 				<h:panelGroup>
 					<h:message for="password" />
 				</h:panelGroup>
 
 
-				<h:outputLabel for="confirm">Conferma password</h:outputLabel>
+				<h:outputLabel for="confirm">conferma</h:outputLabel>
 				<h:inputSecret id="confirm" value="#{registratiBean.confirm}"
-					required="true" requiredMessage="Conferma la password">
+					required="true" requiredMessage="conferma la password"
+					validator="#{registratiBean.checkConfirmPassword}">
 				</h:inputSecret>
 				<h:panelGroup>
 					<h:message for="confirm" /><!-- 
@@ -46,10 +51,10 @@
 				</h:panelGroup>
 
 
-				<h:outputLabel for="email">Email</h:outputLabel>
+				<h:outputLabel for="email">email</h:outputLabel>
 				<h:inputText id="email" value="#{registratiBean.email}"
-					required="true" requiredMessage="Inserisci un indirizzo email"
-					validatorMessage="Formato indirizzo non valido" 	>
+					required="true" requiredMessage="inserisci un indirizzo email"
+					validatorMessage="indirizzo non valido" 	>
 					<f:validateRegex
 						pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
 				</h:inputText>
@@ -58,22 +63,40 @@
 				</h:panelGroup>
 
 
-				<h:outputLabel for="nome">Nome</h:outputLabel>
+				<h:outputLabel for="nome">nome</h:outputLabel>
 				<h:inputText id="nome" value="#{registratiBean.nome}"
-					required="true" requiredMessage="Inserisci un nome" />
+					required="true" requiredMessage="inserisci un nome" />
 				<h:panelGroup>
 					<h:message for="nome" />
 				</h:panelGroup>
+				
+				<h:outputLabel for="profilo">profilo lavorativo</h:outputLabel>
+				<h:selectOneMenu id="profilo" value="#{registratiBean.tipoUtente}" 
+					required="true" requiredMessage="scegli un profilo">
+                	<f:selectItems value="#{parametersBean.tipiUtente}" />
+            	</h:selectOneMenu>
+            	<h:panelGroup>
+					<h:message for="profilo" />
+				</h:panelGroup>
+				
+				
+				<h:outputLink value="/files/Regolamento.docx">Regolamento</h:outputLink>
+				<h:panelGroup/>
+				<h:panelGroup/>
+				
+				<f:facet name="footer">
+		            <h:panelGroup>
+		                <h:commandButton value="COMPLETa REGISTRAZIONe"
+						 	action="#{registratiBean.registrati()}" >
+		            	</h:commandButton>  
+	            	</h:panelGroup>
+        		</f:facet>
+				
 			</h:panelGrid>
 
-			<div style="text-align: right; padding-right: 30px; padding-bottom: 10px;">
-				<h:commandButton  class="command-link" value="COMPLETa REGISTRAZIONe"
-				 	action="#{registratiBean.registrati()}" >
-            	</h:commandButton>  
-			</div>
 		</h:form>
 
-	</div>
+	</h:panelGroup>
 
-</body>
+</h:body>
 </html>

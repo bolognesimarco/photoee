@@ -28,10 +28,10 @@
 
 		function calcolaContent() {
 			var fullheaderheight = $('#hheader').height();
-			$('#content').offset({
+			$('#_content_').offset({
 				top : fullheaderheight
 			});
-			$('#content').height(
+			$('#_content_').height(
 					$('body').height() - fullheaderheight
 							- $('#ffooter').height() - 2);
 		}
@@ -46,13 +46,13 @@
 
 
 
-	<!-- <h:panelGroup layout="block" id="_content_"> -->
-	<h:panelGroup id="content" layout="block">
-		<ui:insert name="contenuto">
-			<ui:include src="#{contentBean.content}" />
-		</ui:insert>
+	<h:panelGroup layout="block" id="_content_">
+		<h:panelGroup id="content" layout="block">
+			<ui:insert name="contenuto">
+				<ui:include src="#{contentBean.content}" />
+			</ui:insert>
+		</h:panelGroup>
 	</h:panelGroup>
-	<!-- </h:panelGroup> -->
 
 	<h:panelGroup layout="block" id="ffooter">
 		<div class="riga-celeste-chiaro"></div>

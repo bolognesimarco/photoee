@@ -1,5 +1,6 @@
 package com.bolo.photo.web.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -17,14 +18,18 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Utente {
-	
+public class Utente implements Serializable{
+	private static final long serialVersionUID = -8221785427181227323L;
+
 	@Id
 	@GeneratedValue
 	private int id;
 
 	@Column
 	private String name;
+	
+	@Column
+	private String username;
 	
 	@Column
 	private String email;
@@ -221,6 +226,14 @@ public class Utente {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 }

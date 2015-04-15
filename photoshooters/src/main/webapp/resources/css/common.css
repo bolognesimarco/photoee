@@ -5,3 +5,43 @@ html, body{
 	margin: 0;
 	font-family: gisha; 
 }
+
+.pannello {
+	background-color: rgba(204, 204, 204, 0.54); 
+	padding-top: 10px; 
+	margin: 0 auto;
+	color: white;
+}
+
+.pannello thead{
+	text-align: left;
+	color: #EF4323;
+	font-size: large;
+	font-weight: bold;
+}
+
+.pannello tfoot{
+	text-align: right;
+}
+
+.pannello tfoot input{
+	font-size: large;
+	font-weight: bold;
+	text-decoration: none;
+	background:none!important;
+    border:none; 
+    padding:0!important;
+    cursor: pointer;
+    color: white;
+}
+
+.pannello table{
+	width: 100%;
+}
+
+.right{
+	text-align: right;
+}
+.left{
+	text-align: left;
+}
