@@ -1,5 +1,9 @@
 package com.bolo.photoshooters.web;
 
+
+import java.util.Date;
+import java.util.Properties;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -8,6 +12,15 @@ import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import com.bolo.photo.web.entity.TipoUtente;
 import com.bolo.photo.web.entity.Utente;
@@ -82,6 +95,10 @@ public class RegistratiBean {
 					FacesMessage.SEVERITY_ERROR, msg, msg));
 		}
 	}
+	
+	
+	
+	
 
 	public String getUsername() {
 		return username;
