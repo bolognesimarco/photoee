@@ -33,6 +33,12 @@ public class Utente implements Serializable{
 	
 	@Column
 	private String email;
+	
+	@Column
+	private String activationCode;
+	
+	@Column
+	private boolean active = false;
 
 	@Column
 	@Temporal(TemporalType.TIMESTAMP)
@@ -234,6 +240,22 @@ public class Utente implements Serializable{
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getActivationCode() {
+		return activationCode;
+	}
+
+	public void setActivationCode(String activationCode) {
+		this.activationCode = activationCode;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 	
 }

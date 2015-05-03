@@ -21,36 +21,29 @@ import com.bolo.photoshooters.service.ServiziVariImpl;
 
 @ManagedBean
 @SessionScoped
-public class RegistratiBean {
+public class LoginBean {
 	private String username;
 	private String password;
-	private String confirm;
-	private String email;
-	private String nome;
-	private int tipoUtente;
 	
 	private ServiziComuni serv = new ServiziComuniImpl();
 
-	public void registrati() {
+	public void login() {
 		
 		try {
-			Utente nuovo = new Utente();
-			nuovo.setUsername(username);
-			nuovo.setPassword(password);
-			nuovo.setName(nome);
-			nuovo.setEmail(email);
-			nuovo.setTipoUtente(serv.getReference(TipoUtente.class, tipoUtente));
-			nuovo.setActive(false);
-			nuovo.setActivationCode(UUID.randomUUID().toString());
-			serv.persist(nuovo);
-			MailSender.sendRegisterMail(email, nuovo.getActivationCode());
+			
+			Utente u = serviziVari.login(username, password);
+			if(u!=null){
+				utenteBean.setUtente(u);
+				contentBean.setContent("homePage.xhtml");
+			}else{
+				contentBean.setMessaggio("Utente e Password errati !!");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			contentBean.setContent("registrati.xhtml");
+			contentBean.setContent("login.xhtml");
 		}
 		
-		contentBean.setContent(null);
-		FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("content");
+		
 	}
 	
 	private ServiziVari serviziVari = new ServiziVariImpl();
@@ -109,37 +102,6 @@ public class RegistratiBean {
 		this.password = password;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public int getTipoUtente() {
-		return tipoUtente;
-	}
-
-	public void setTipoUtente(int tipoUtente) {
-		this.tipoUtente = tipoUtente;
-	}
-
-	public String getConfirm() {
-		return confirm;
-	}
-
-	public void setConfirm(String confirm) {
-		this.confirm = confirm;
-	}
 
 	public ContentBean getContentBean() {
 		return contentBean;
@@ -151,4 +113,17 @@ public class RegistratiBean {
 
 	@ManagedProperty(value = "#{contentBean}")
 	private ContentBean contentBean;
+	
+	@ManagedProperty(value = "#{utenteBean}")
+	private UtenteBean utenteBean;
+
+	public UtenteBean getUtenteBean() {
+		return utenteBean;
+	}
+
+	public void setUtenteBean(UtenteBean utenteBean) {
+		this.utenteBean = utenteBean;
+	}
+
+
 }

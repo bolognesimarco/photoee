@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+<h:head>
+	<h:outputStylesheet name="common.css" library="css" />
+	<h:outputStylesheet name="login.css" library="css" />
+</h:head>
+<h:body>
+
+	<h:panelGroup styleClass="pannello login">
+
+		<h:form id="loginform">
+			<h:panelGrid columns="3" columnClasses="right, left, left">
+			
+				<f:facet name="header">
+            		<h:outputText value="LOGin"/>
+        		</f:facet>
+
+				<h:outputLabel for="username">username</h:outputLabel>
+				<h:inputText id="username" value="#{loginBean.username}"
+					required="true" requiredMessage="inserisci uno username"/>
+				<h:panelGroup>
+					<h:message for="username" />
+				</h:panelGroup>
+
+
+				<h:outputLabel for="password">password</h:outputLabel>
+				<h:inputSecret id="password" value="#{loginBean.password}"
+					required="true" requiredMessage="inserisci una password">
+				</h:inputSecret>
+				<h:panelGroup>
+					<h:message for="password" />
+				</h:panelGroup>
+
+				<f:facet name="footer">
+		            <h:panelGroup>
+		                <h:commandButton value="ENTRa"
+						 	action="#{loginBean.login()}" >
+		            	</h:commandButton>  
+	            	</h:panelGroup>
+        		</f:facet>
+				
+			</h:panelGrid>
+
+		</h:form>
+
+	</h:panelGroup>
+
+</h:body>
+</html>

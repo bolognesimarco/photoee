@@ -1,4 +1,4 @@
-package com.bolo.photoshooters.web;
+package com.bolo.photoshooters.temp;
 
 import java.io.File;
 import java.io.FileOutputStream;

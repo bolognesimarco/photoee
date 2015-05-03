@@ -13,48 +13,80 @@
 		<h:outputStylesheet library="css" name="header.css"  />
 		<div class="riga-celeste-chiaro"></div>
 		<div class="riga-celeste-medio">
-			<!-- <img src="/rimgs/Scritta_photoshooters-01_C.svg" alt="PHOTOSHOOTERS"></img> -->
 			<h:graphicImage value="/resources/images/Scritta_photoshooters-01_C.svg"/>
 			
 			<h:form>
-
-				<h:inputHidden value="#{menuBean.home}" id="homeid" />
+				
 				<h:commandButton value="HOMe" styleClass="menubutton">
-					<f:ajax execute="homeid" render=":content" />
+					<f:ajax event="click" listener="#{menuBean.menuClick(7)}" render=":content" />
 				</h:commandButton>
-
-				<h:inputHidden value="#{menuBean.photoshooters}" id="photoshootersid" />
+				
 	    	   	<h:commandButton value="PHOTOSHOOTERs" styleClass="menubutton">
-	    			<f:ajax execute="photoshootersid" render=":content" />
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(6)}" render=":content" />
 	    	   	</h:commandButton>
 	    	   	
-	    	   	<h:inputHidden value="#{menuBean.lavoro}" id="lavoroid" />
 	    	   	<h:commandButton value="LAVORo|EVENTi" styleClass="menubutton">
-	    			<f:ajax execute="lavoroid" render=":content" />
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(5)}" render=":content" />
 	    	   	</h:commandButton>
-	    	   	
-	    	   	<h:inputHidden value="#{menuBean.forum}" id="forumid" />
+
 	    	   	<h:commandButton value="FORUm" styleClass="menubutton">
-	    			<f:ajax execute="forumid" render=":content" />
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(4)}" render=":content" />
 	    	   	</h:commandButton>
 	    	   	
-	    	   	<h:inputHidden value="#{menuBean.site}" id="siteid" />
 	    	   	<h:commandButton value="SITe" styleClass="menubutton">
-	    			<f:ajax execute="siteid" render=":content" />
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(3)}" render=":content" />
 	    	   	</h:commandButton>
 	    	   	
-	    	   	<h:inputHidden value="#{menuBean.registrati}" id="registratiid" />
-	    	   	<h:commandButton value="REGISTRATi" styleClass="menubutton">
-	    			<f:ajax execute="registratiid" render=":content :registratiform" />
+	    	   	<h:commandButton value="REGISTRATi" styleClass="menubutton"  rendered="#{utenteBean.utente==null}">
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(1)}" render=":content :registratiform" />
 	    	   	</h:commandButton>
 	    	   	
-	    	   	<h:inputHidden value="#{menuBean.login}" id="loginid" />
-	    	   	<h:commandButton value="LOGIn" styleClass="menubutton">
-	    			<f:ajax execute="loginid" render=":content" />
+	    	   	<h:commandButton value="LOGin" styleClass="menubutton" rendered="#{utenteBean.utente==null}">
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(2)}" render=":content" />
 	    	   	</h:commandButton>
 
 			</h:form>
 		</div>
+		
+		<h:panelGroup layout="block" class="riga-celeste-fino" rendered="#{utenteBean.utente!=null}">
+			<h:form>
+				
+				<h:graphicImage value="/resources/images/nofoto.jpg" styleClass="circular"/>
+
+				<h:commandButton value="MENù 1" styleClass="menubuttonred">
+					<f:ajax event="click" listener="#{menuBean.menuClick(8)}" render=":content" />
+				</h:commandButton>
+
+	    	   	<h:commandButton value="MENù 2" styleClass="menubuttonred">
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(9)}" render=":content" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:commandButton value="MENù 3" styleClass="menubuttonred">
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(10)}" render=":content" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:commandButton value="MENù 4" styleClass="menubuttonred">
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(11)}" render=":content" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:commandButton value="MENù 5" styleClass="menubuttonred">
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(12)}" render=":content" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:commandButton value="MENù 6" styleClass="menubuttonred">
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(13)}" render=":content :registratiform" />
+	    	   	</h:commandButton>
+	    	   	
+	    	   	<h:commandButton value="LOGout" styleClass="menubuttonred"  rendered="#{utenteBean.utente!=null}">
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(14)}" render=":content :hheader" />
+	    	   	</h:commandButton>
+
+			</h:form>
+		
+		
+		</h:panelGroup>
+		
+		
 		<div class="pattern-alto-guest"></div>
 	</ui:composition>
 

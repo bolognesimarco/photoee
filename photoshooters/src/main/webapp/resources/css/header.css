@@ -4,6 +4,13 @@
 	height: 82px;
 }
 
+.riga-celeste-fino{
+	text-align: center;
+	background-color: #9FB2C2;
+	height: 30px;
+	vertical-align: middle;
+}
+
 .menubutton{
 	background:none!important;
     border:none; 
@@ -16,8 +23,32 @@
 	margin-left: 30px;
 }
 
+.menubuttonred{
+	background:none!important;
+    border:none; 
+    padding:0!important;
+    cursor: pointer;
+     
+	text-decoration: none;
+	color: white;
+	vertical-align: middle;
+	margin-left: 30px;
+	margin-bottom: 15px;
+}
+
 .pattern-alto-guest{
 	background-image: url('../../rimgs/pattern_alto_3000_C.svg');
 	background-size: 3000px 24px;
 	height: 24px;
+	text-align: center;
+	color: red;
+}
+
+.circular {
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	display: inline-block;
 }

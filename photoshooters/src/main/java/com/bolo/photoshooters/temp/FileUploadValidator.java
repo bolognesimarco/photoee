@@ -1,4 +1,4 @@
-package com.bolo.photoshooters.web;
+package com.bolo.photoshooters.temp;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;

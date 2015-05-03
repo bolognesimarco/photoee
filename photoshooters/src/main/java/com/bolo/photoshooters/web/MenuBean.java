@@ -3,71 +3,72 @@ package com.bolo.photoshooters.web;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 @SessionScoped
 public class MenuBean {
-	private String home,photoshooters,lavoro,forum,site,registrati,login;
 	
+	public void menuClick(int menuClicked){
+		switch (menuClicked) {
+		case 1://REGISTRATI
+			contentBean.setContent("registrati.xhtml");
+			break;
+		case 2://LOGIN
+			contentBean.setContent("login.xhtml");
+			break;
+		case 3://SITE
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 4://FORUM
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 5://LAVORI
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 6://PHOTOSHOOTERS
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 7://HOME
+			contentBean.setContent("homePage.xhtml");
+			break;
+		case 8://FORUM
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 9://FORUM
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 10://FORUM
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 11://FORUM
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 12://FORUM
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 13://FORUM
+			contentBean.setContent("wip.xhtml");
+			break;
+		case 14://LOGOUT
+			utenteBean.setUtente(null);
+			contentBean.setContent("homePage.xhtml");
+			break;
+		case 15://HOMEPAGE
+			utenteBean.setUtente(null);
+			contentBean.setContent("homePage.xhtml");
+			break;
+		default:
+			break;
+		}
+	}
+
+
 	
-
-	public String getHome() {
-		return home;
+	public void messaggioAvvenutaRegistrazione(){
+		contentBean.setContent("messaggioAvvenutaRegistrazione.xhtml");
 	}
-
-	public void setHome(String home) {
-		this.home = home;
-	}
-
-	public String getPhotoshooters() {
-		return photoshooters;
-	}
-
-	public void setPhotoshooters(String photoshooters) {
-		this.photoshooters = photoshooters;
-	}
-
-	public String getLavoro() {
-		return lavoro;
-	}
-
-	public void setLavoro(String lavoro) {
-		this.lavoro = lavoro;
-	}
-
-	public String getForum() {
-		return forum;
-	}
-
-	public void setForum(String forum) {
-		this.forum = forum;
-	}
-
-	public String getSite() {
-		return site;
-	}
-
-	public void setSite(String site) {
-		this.site = site;
-	}
-
-	public String getRegistrati() {
-		return registrati;
-	}
-
-	public void setRegistrati(String registrati) {
-		System.out.println("REGISTRATIIIIIIIIIIIIIIIIIIIIII");
-		contentBean.setContent("registrati.xhtml");
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
+	
 	public ContentBean getContentBean() {
 		return contentBean;
 	}
@@ -79,5 +80,15 @@ public class MenuBean {
 	@ManagedProperty(value="#{contentBean}")
 	private ContentBean contentBean;
 	
+	@ManagedProperty(value="#{utenteBean}")
+	private UtenteBean utenteBean;
+
+	public UtenteBean getUtenteBean() {
+		return utenteBean;
+	}
+
+	public void setUtenteBean(UtenteBean utenteBean) {
+		this.utenteBean = utenteBean;
+	}
 	
 }

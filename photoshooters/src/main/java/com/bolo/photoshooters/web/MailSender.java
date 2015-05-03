@@ -13,10 +13,18 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class Provamail {
+public class MailSender {
 	public static void main(String[] aa) throws Exception{
-		Provamail rb = new Provamail();
-		rb.sendEmail("mail.photoshooters.net", "25", "register@photoshooters.net", "1Ochorios_", "bolognesi.marco@gmail.com", "prova", "messaggioneeee");
+		//MailSender rb = new MailSender();
+		MailSender.sendRegisterMail("bolognesi.marco@gmail.com", "messaggioneeee");
+	}
+	
+	private static String activationMessage = "Hai ricevuto questo messaggio perchè ti sei registrato a Photoshooters.net.\r\n"
+			+ "Per completare la registrazione segui questo link: http://localhost:8080/activate?activationCode=%\r\n\r\n"
+			+ "Se non hai effettuato tu la registrazione semplicemente cancella questo messaggio.";
+	
+	public static void sendRegisterMail(String address, String activationCode) throws Exception{
+		sendEmail("mail.photoshooters.net", "25", "register@photoshooters.net", "1Ochorios_", address, "Registrazione a Photoshooters.net", activationMessage.replace("%", activationCode));
 	}
 	
 	public static void sendEmail(String host, String port,
