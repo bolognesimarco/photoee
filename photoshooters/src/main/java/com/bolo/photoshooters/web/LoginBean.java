@@ -30,12 +30,24 @@ public class LoginBean {
 	public void login() {
 		
 		try {
-			
+			System.out.println("in login");
 			Utente u = serviziVari.login(username, password);
+			System.out.println("u:"+u);
 			if(u!=null){
+				String mm = "";
+				if(u.getDataNascita()==null){
+					mm = mm+" Inserisci data nascita";
+				}
+				if(u.getDataNascita()==null){
+					mm = mm+" Inserisci data nascita";
+				}
+				contentBean.setMessaggio(mm);
+				
+				
 				utenteBean.setUtente(u);
 				contentBean.setContent("homePage.xhtml");
 			}else{
+				System.out.println("login ko");
 				contentBean.setMessaggio("Utente e Password errati !!");
 			}
 		} catch (Exception e) {

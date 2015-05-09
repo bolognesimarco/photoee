@@ -7,6 +7,15 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>persistence</artifactId>
+	
+	<repositories>
+		<repository>
+			<id>oss.sonatype.org</id>
+			<name>OSS Sonatype Staging</name>
+			<url>https://oss.sonatype.org/content/groups/staging</url>
+		</repository>
+	</repositories>
+	
 	<dependencies>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -26,10 +35,10 @@
 			<artifactId>javax.persistence</artifactId>
 			<version>2.1.0</version>
 		</dependency>
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>org.eclipse.persistence.jpa.modelgen</artifactId>
-			<version>2.6.0-SNAPSHOT</version>
-		</dependency>
+			<version>2.6.0</version>
+		</dependency> -->
 	</dependencies>
 </project>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<h:outputStylesheet name="common.css" library="css" />
+	<h:outputStylesheet name="homePage.css" library="css" />
+</h:head>
+
+<h:body>
+	
+	<h:panelGroup styleClass="pannello homepage">
+
+		<h:form id="registratiform">
+			<h:panelGrid columns="3" columnClasses="right, left, left">
+			
+				<f:facet name="header">
+            		<h:outputText value="PROFILO PHOTOSHOOTEr"/>
+        		</f:facet>
+
+				<h:outputLabel for="username">username</h:outputLabel>
+				<h:inputText id="username" value="#{registratiBean.username}"
+					required="true" requiredMessage="inserisci uno username" 
+					validator="#{registratiBean.checkUsername}"/>
+				<h:panelGroup>
+					<h:message for="username" />
+				</h:panelGroup>
+
+
+				<h:outputLabel for="password">password</h:outputLabel>
+				<h:inputSecret id="password" value="#{registratiBean.password}"
+					required="true" requiredMessage="inserisci una password">
+				</h:inputSecret>
+				<h:panelGroup>
+					<h:message for="password" />
+				</h:panelGroup>
+
+
+				<h:outputLabel for="confirm">conferma</h:outputLabel>
+				<h:inputSecret id="confirm" value="#{registratiBean.confirm}"
+					required="true" requiredMessage="conferma la password"
+					validator="#{registratiBean.checkConfirmPassword}">
+				</h:inputSecret>
+				<h:panelGroup>
+					<h:message for="confirm" /><!-- 
+					<o:validateEqual components="password confirm"
+						message="Passwords do not match!" showMessageFor="confirm" /> -->
+				</h:panelGroup>
+
+
+				<h:outputLabel for="email">email</h:outputLabel>
+				<h:inputText id="email" value="#{registratiBean.email}"
+					required="true" requiredMessage="inserisci un indirizzo email"
+					validatorMessage="indirizzo non valido" 	>
+					<f:validateRegex
+						pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+				</h:inputText>
+				<h:panelGroup>
+					<h:message for="email" />
+				</h:panelGroup>
+
+
+				<h:outputLabel for="nome">nome</h:outputLabel>
+				<h:inputText id="nome" value="#{registratiBean.nome}"
+					required="true" requiredMessage="inserisci un nome" />
+				<h:panelGroup>
+					<h:message for="nome" />
+				</h:panelGroup>
+				
+				<h:outputLabel for="profilo">profilo lavorativo</h:outputLabel>
+				<h:selectOneMenu id="profilo" value="#{registratiBean.tipoUtente}" 
+					required="true" requiredMessage="scegli un profilo">
+                	<f:selectItems value="#{parametersBean.tipiUtente}" />
+            	</h:selectOneMenu>
+            	<h:panelGroup>
+					<h:message for="profilo" />
+				</h:panelGroup>
+				
+				
+				<h:outputLink value="/files/Regolamento.docx">Download Regolamento</h:outputLink>
+				<h:panelGroup/>
+				<h:panelGroup/>
+				
+				<f:facet name="footer">
+		            <h:panelGroup>
+		                <h:commandButton value="COMPLETa REGISTRAZIONe"
+						 	action="#{registratiBean.registrati()}" >
+		            	</h:commandButton>  
+	            	</h:panelGroup>
+        		</f:facet>
+				
+			</h:panelGrid>
+
+		</h:form>
+
+	</h:panelGroup>
+	
+
+</h:body>
+</html>

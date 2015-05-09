@@ -1,34 +1,36 @@
 package com.bolo.photo.web.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class TipoUtente implements Serializable{
-	private static final long serialVersionUID = -9019773926782820630L;
+public class TipoLavoro implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3363683251993722311L;
 
 	@Id
 	private int id;
-	
+
 	@Column
 	private String descrizione;
 
-	@ManyToMany(mappedBy="tipiUtente", cascade=CascadeType.PERSIST)
-	private List<TipoLavoro> tipiLavoro = new ArrayList<TipoLavoro>();
-	
-	public List<TipoLavoro> getTipiLavoro() {
-		return tipiLavoro;
+	@ManyToMany
+	private List<TipoUtente> tipiUtente;
+
+	public List<TipoUtente> getTipiUtente() {
+		return tipiUtente;
 	}
 
-	public void setTipiLavoro(List<TipoLavoro> tipiLavoro) {
-		this.tipiLavoro = tipiLavoro;
+	public void setTipiUtente(List<TipoUtente> tipiUtente) {
+		this.tipiUtente = tipiUtente;
 	}
 
 	public int getId() {

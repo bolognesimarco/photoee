@@ -2,6 +2,7 @@ package com.bolo.photoshooters;
 
 import javax.persistence.EntityManager;
 
+import com.bolo.photo.web.entity.TipoLavoro;
 import com.bolo.photo.web.entity.TipoUtente;
 import com.bolo.photo.web.entity.Utente;
 import com.bolo.photoshooters.service.ServiziComuni;
@@ -27,7 +28,7 @@ public class DBInitializer {
 		try {
 			
 			dbInit.clean(em);
-			dbInit.initTipiUtenti(em);
+			dbInit.initTipiUtentiLavori(em);
 			
 		
 			em.getTransaction().commit();
@@ -43,7 +44,7 @@ public class DBInitializer {
 		serv.deleteAll(Utente.class, em);
 	}
 	
-	public void initTipiUtenti(EntityManager em) throws Exception{
+	public void initTipiUtentiLavori(EntityManager em) throws Exception{
 		TipoUtente fotografo = new TipoUtente();
 		fotografo.setId(1);
 		fotografo.setDescrizione("fotografo");
@@ -52,6 +53,12 @@ public class DBInitializer {
 		modella.setId(2);
 		modella.setDescrizione("modella");
 		
+		TipoLavoro hairmodel = new TipoLavoro();
+		hairmodel.setId(1);
+		hairmodel.setDescrizione("haimodel");
+		modella.getTipiLavoro().add(hairmodel);
+		
+		//serv.persist(hairmodel, em);
 		serv.deleteAll(TipoUtente.class, em);
 		serv.persist(fotografo, em);
 		serv.persist(modella, em);
