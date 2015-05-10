@@ -52,16 +52,22 @@ public class DBInitializer {
 		TipoUtente modella = new TipoUtente();
 		modella.setId(2);
 		modella.setDescrizione("modella");
+	
+		TipoUtente agenzia = new TipoUtente();
+		agenzia.setId(3);
+		agenzia.setDescrizione("agenzia");
 		
 		TipoLavoro hairmodel = new TipoLavoro();
-		hairmodel.setId(1);
+		hairmodel.setId(5);
 		hairmodel.setDescrizione("haimodel");
-		modella.getTipiLavoro().add(hairmodel);
-		
+		//modella.getTipiLavoro().add(hairmodel);
+	
+	
 		//serv.persist(hairmodel, em);
 		serv.deleteAll(TipoUtente.class, em);
 		serv.persist(fotografo, em);
 		serv.persist(modella, em);
+		serv.persist(agenzia, em);
 	}
 
 }
