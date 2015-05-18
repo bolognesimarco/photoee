@@ -15,80 +15,54 @@
 	
 	<h:panelGroup styleClass="pannello homepage">
 
-		<h:form id="registratiform">
-			<h:panelGrid columns="3" columnClasses="right, left, left">
+		<h:form id="profiloform">
+			<h:panelGrid columns="6" columnClasses="right, left, left, right, left, left">
 			
 				<f:facet name="header">
             		<h:outputText value="PROFILO PHOTOSHOOTEr"/>
         		</f:facet>
-
+	
 				<h:outputLabel for="username">username</h:outputLabel>
-				<h:inputText id="username" value="#{registratiBean.username}"
-					required="true" requiredMessage="inserisci uno username" 
-					validator="#{registratiBean.checkUsername}"/>
-				<h:panelGroup>
-					<h:message for="username" />
-				</h:panelGroup>
-
+				<h:inputText id="username" value="#{utenteBean.utente.username}"/>
+				<h:outputLabel>*</h:outputLabel>
 
 				<h:outputLabel for="password">password</h:outputLabel>
-				<h:inputSecret id="password" value="#{registratiBean.password}"
-					required="true" requiredMessage="inserisci una password">
-				</h:inputSecret>
-				<h:panelGroup>
-					<h:message for="password" />
-				</h:panelGroup>
-
-
-				<h:outputLabel for="confirm">conferma</h:outputLabel>
-				<h:inputSecret id="confirm" value="#{registratiBean.confirm}"
-					required="true" requiredMessage="conferma la password"
-					validator="#{registratiBean.checkConfirmPassword}">
-				</h:inputSecret>
-				<h:panelGroup>
-					<h:message for="confirm" /><!-- 
-					<o:validateEqual components="password confirm"
-						message="Passwords do not match!" showMessageFor="confirm" /> -->
-				</h:panelGroup>
-
-
+				<h:inputText id="password" value="#{utenteBean.utente.password}"/>
+				<h:outputLabel>*</h:outputLabel>	
+				
+				
 				<h:outputLabel for="email">email</h:outputLabel>
-				<h:inputText id="email" value="#{registratiBean.email}"
-					required="true" requiredMessage="inserisci un indirizzo email"
-					validatorMessage="indirizzo non valido" 	>
-					<f:validateRegex
-						pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-				</h:inputText>
-				<h:panelGroup>
-					<h:message for="email" />
-				</h:panelGroup>
-
+				<h:inputText id="email" value="#{utenteBean.utente.email}"/>
+				<h:outputLabel>*</h:outputLabel>	
 
 				<h:outputLabel for="nome">nome</h:outputLabel>
-				<h:inputText id="nome" value="#{registratiBean.nome}"
-					required="true" requiredMessage="inserisci un nome" />
-				<h:panelGroup>
-					<h:message for="nome" />
-				</h:panelGroup>
-				
-				<h:outputLabel for="profilo">profilo lavorativo</h:outputLabel>
-				<h:selectOneMenu id="profilo" value="#{registratiBean.tipoUtente}" 
-					required="true" requiredMessage="scegli un profilo">
-                	<f:selectItems value="#{parametersBean.tipiUtente}" />
+				<h:inputText id="nome" value="#{utenteBean.utente.name}"/>
+				<h:outputLabel>*</h:outputLabel>	
+
+
+				<h:outputLabel for="sesso">sesso</h:outputLabel>
+				<h:selectOneMenu id="sesso" value="#{utenteBean.utente.sesso}" 
+					required="true" requiredMessage="scegli il sesso">
+				 <f:selectItems value="#{utenteBean.utente.sessi}" var="sesso" itemValue="#{sesso}" itemLabel="#{sesso.sesso}" />
             	</h:selectOneMenu>
             	<h:panelGroup>
-					<h:message for="profilo" />
+					<h:message for="sesso" />
+				</h:panelGroup>
+
+				<h:outputLabel for="dataNascita">data di nascita</h:outputLabel>
+        	    <h:inputText id="dataNascita" value="#{utenteBean.utente.dataNascita}"
+        	      required="true" requiredMessage="inserisci l'anno" >
+       			<f:convertDateTime pattern="d-M-yyyy" />
+       			 </h:inputText>
+            	<h:panelGroup>
+					<h:message for="dataNascita" />
 				</h:panelGroup>
 				
-				
-				<h:outputLink value="/files/Regolamento.docx">Download Regolamento</h:outputLink>
-				<h:panelGroup/>
-				<h:panelGroup/>
 				
 				<f:facet name="footer">
 		            <h:panelGroup>
-		                <h:commandButton value="COMPLETa REGISTRAZIONe"
-						 	action="#{registratiBean.registrati()}" >
+		                <h:commandButton value="AGGIORNa PROFILo"
+						 	action="#{utenteBean.aggiornaProfilo()}" >
 		            	</h:commandButton>  
 	            	</h:panelGroup>
         		</f:facet>

@@ -53,7 +53,7 @@
 				
 				<h:graphicImage value="/resources/images/nofoto.jpg" styleClass="circular"/>
 
-				<h:commandButton value="MENù 1" styleClass="menubuttonred">
+				<h:commandButton value="PROFILo" styleClass="menubuttonred">
 					<f:ajax event="click" listener="#{menuBean.menuClick(8)}" render=":content" />
 				</h:commandButton>
 
@@ -77,7 +77,7 @@
 	    			<f:ajax event="click" listener="#{menuBean.menuClick(13)}" render=":content :registratiform" />
 	    	   	</h:commandButton>
 	    	   	
-	    	   	<h:commandButton value="LOGout" styleClass="menubuttonred"  rendered="#{utenteBean.utente!=null}">
+	    	   	<h:commandButton onclick="if (! confirm('confermi il LOGOUt?')) return false" value="LOGOUt" styleClass="menubuttonred"  rendered="#{utenteBean.utente!=null}">
 	    			<f:ajax event="click" listener="#{menuBean.menuClick(14)}" render=":content :hheader" />
 	    	   	</h:commandButton>
 

@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import com.bolo.photo.web.entity.Sesso;
 import com.bolo.photo.web.entity.TipoUtente;
 import com.bolo.photoshooters.service.ServiziComuni;
 import com.bolo.photoshooters.service.ServiziComuniImpl;

@@ -34,21 +34,20 @@ public class LoginBean {
 			Utente u = serviziVari.login(username, password);
 			System.out.println("u:"+u);
 			if(u!=null){
-				String mm = "";
+				String mm = "Completa il tuo profilo di photoshooter: inserisci";
 				if(u.getDataNascita()==null){
-					mm = mm+" Inserisci data nascita";
+					mm = mm+" anno di nascita -";
 				}
-				if(u.getDataNascita()==null){
-					mm = mm+" Inserisci data nascita";
+				if(u.getSesso()==null){
+					mm = mm+" genere -";
 				}
-				contentBean.setMessaggio(mm);
-				
-				
+
+				contentBean.setMessaggio(mm);				
 				utenteBean.setUtente(u);
 				contentBean.setContent("homePage.xhtml");
 			}else{
 				System.out.println("login ko");
-				contentBean.setMessaggio("Utente e Password errati !!");
+				contentBean.setMessaggio("Utente e Password errati!!");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -33,7 +33,7 @@ public class MenuBean {
 			contentBean.setContent("homePage.xhtml");
 			break;
 		case 8://FORUM
-			contentBean.setContent("wip.xhtml");
+			contentBean.setContent("profilo.xhtml");
 			break;
 		case 9://FORUM
 			contentBean.setContent("wip.xhtml");
@@ -52,6 +52,7 @@ public class MenuBean {
 			break;
 		case 14://LOGOUT
 			utenteBean.setUtente(null);
+			contentBean.setMessaggio(null);
 			contentBean.setContent("homePage.xhtml");
 			break;
 		case 15://HOMEPAGE

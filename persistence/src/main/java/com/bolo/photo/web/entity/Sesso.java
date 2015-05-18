@@ -2,7 +2,8 @@ package com.bolo.photo.web.entity;
 
 public enum Sesso {
 	M ("M"),
-	F ("F");
+	F ("F"),
+	A ("A");
 	
 	private final String sesso;
 	

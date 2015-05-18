@@ -90,6 +90,10 @@ public class Utente implements Serializable{
 	@Enumerated
 	private Sesso sesso;
 
+	public Sesso[] getSessi() {
+        return Sesso.values();
+	}
+	
 	public int getId() {
 		return id;
 	}
