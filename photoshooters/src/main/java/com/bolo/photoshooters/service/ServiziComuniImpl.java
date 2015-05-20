@@ -39,6 +39,20 @@ public class ServiziComuniImpl implements ServiziComuni {
 	}
 	
 	
+	@Override
+	public <T extends Serializable> void merge(T t, EntityManager em) throws Exception{
+		em.merge(t);
+	}
+	@Override
+	public <T extends Serializable> void merge(T t) throws Exception{
+		EntityManager em = EMF.createEntityManager();
+		em.getTransaction().begin();
+		merge(t, em);
+		em.getTransaction().commit();
+		em.close();
+	}
+	
+	
 	public <T extends Serializable> T getReference(Class<T> c, int id, EntityManager em) throws Exception{
 		return (T)em.getReference(c, id);
 	}

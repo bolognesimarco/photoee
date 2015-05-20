@@ -46,10 +46,10 @@ public class UtenteBean {
 		
 		try {
 
-			utente.setName(nome);
-			utente.setSesso(sesso);
-			utente.setDataNascita(dataNascita);
-			serv.persist(utente);
+//			utente.setName(nome);
+//			utente.setSesso(sesso);
+//			utente.setDataNascita(dataNascita);
+			serv.merge(utente);
 
 		} catch (Exception e) {
 			e.printStackTrace();

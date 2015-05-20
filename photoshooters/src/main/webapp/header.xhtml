@@ -42,7 +42,7 @@
 	    	   	</h:commandButton>
 	    	   	
 	    	   	<h:commandButton value="LOGin" styleClass="menubutton" rendered="#{utenteBean.utente==null}">
-	    			<f:ajax event="click" listener="#{menuBean.menuClick(2)}" render=":content" />
+	    			<f:ajax event="click" listener="#{menuBean.menuClick(2)}" render=":content :loginform" />
 	    	   	</h:commandButton>
 
 			</h:form>
