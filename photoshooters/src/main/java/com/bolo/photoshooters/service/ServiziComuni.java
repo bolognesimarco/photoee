@@ -24,4 +24,5 @@ public interface ServiziComuni {
 	
 	public <T extends Serializable> void merge(T t, EntityManager em) throws Exception;
 	public <T extends Serializable> void merge(T t) throws Exception;
+	//ciao
 }
